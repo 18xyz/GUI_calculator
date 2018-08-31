@@ -1,7 +1,19 @@
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Button;
+import java.awt.GridLayout;
+import java.awt.TextArea;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class FrameA extends JFrame {
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+
+public class FrameA extends JFrame implements ActionListener{
+	Button button1;
+	Button button2;
+	JTextArea textArea;
 	public FrameA() {
 		// this.setSize(700, 600);
 		// this.setLayout(new GridLayout(0, 4));
@@ -22,10 +34,10 @@ public class FrameA extends JFrame {
 		panelD.setLayout(new BoxLayout(panelD, BoxLayout.Y_AXIS));
 		// Button 按眉 积己
 		Button button0 = new Button("0");
-		Button button1 = new Button("1");
+		button1 = new Button("1");
 		// button1.setPreferredSize(new Dimension(45, 28));
 		// =flowlayout 秦具 荤侩 啊瓷
-		Button button2 = new Button("2");
+		button2 = new Button("2");
 		Button button3 = new Button("3");
 		Button button4 = new Button("4");
 		Button button5 = new Button("5");
@@ -40,7 +52,7 @@ public class FrameA extends JFrame {
 		Button buttonDivision = new Button("/");
 		Button buttonResult = new Button("=");
 		// JTextArea 按眉 积己
-		JTextArea textArea = new JTextArea(1, 20);
+		textArea = new JTextArea(1, 20);
 		JPanel Text = new JPanel();
 		textArea.setEditable(false);
 		// this.add(panel);
@@ -72,6 +84,10 @@ public class FrameA extends JFrame {
 		panelD.add(buttonPlus);
 		panelD.add(buttonMinus);
 		panelD.add(buttonDivision);
+		
+		
+		button1.addActionListener(this);
+		button2.addActionListener(this);
 
 		panelMain.add(Text);
 		this.setBounds(10, 10, 400, 200);
@@ -79,6 +95,15 @@ public class FrameA extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 
+	}
+@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == button1){
+			textArea.append("1");
+		}
+		else if(e.getSource() == button2){
+			textArea.append("2");
+		}
 	}
 
 	public static void main(String[] args) {
