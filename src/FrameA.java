@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-
+//2018.08.31
 public class FrameA extends JFrame implements ActionListener{
 	Button button1;
 	Button button2;
